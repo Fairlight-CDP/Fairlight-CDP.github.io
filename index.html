@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fairlight CDP - Democratizing Finance in the DeFi Landscape</title>
+    <meta property="og:title" content="Fairlight CDP - Democratizing Finance in the DeFi Landscape">
+    <meta name="description" content="Fairlight CDP is revolutionizing decentralized finance by offering inclusive and accessible financial services through blockchain technology.">
+    <meta property="og:description" content="Fairlight CDP is revolutionizing decentralized finance by offering inclusive and accessible financial services through blockchain technology.">
+    <meta property="og:image" content="img/16180.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/imgfavicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="image-container">
+        <div id="call">
+            <h1>Fairlight CDP</h1>
+            <marquee>- 16180 -</marquee>
+            <p><img id="bouncer" src="img/logo.png" /></p>
+            <button class="litepaper-button" id="litepaperButton" >Read the Litepaper</button> <br />
+
+            <button class="litepaper-button" id="buyokx">Buy on OKX</button>
+            <button class="litepaper-button" id="buyuni">Buy on Unisat</button>
+
+        </div>
+        <div class="color-overlay">
+            
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var buttons = {
+            'litepaperButton': 'https://ordinals.com/content/51f76b673990feceda6b1ef886867165c1ccd0d0e3c2482c6fcc77b2741b04c5i0',
+            'buyuni': 'https://unisat.io/market/brc20?tick=fcdp',
+            'buyokx': 'https://www.okx.com/web3/marketplace/ordinals/brc20/fcdp'
+        };
+        var languages = {
+            'litepaperButton': ["Read the Litepaper", "阅读轻型文件"],
+            'buyuni': ["Buy on Unisat", "在Unisat上购买"],
+            'buyokx': ["Buy on OKX", "在OKX上购买"]
+        };
+        var index = 0;
+
+        for (var id in buttons) {
+            (function(id) {
+                var button = document.getElementById(id);
+                button.onclick = function() { window.open(buttons[id], '_blank'); };
+            })(id);
+        }
+
+        setInterval(function() {
+            for (var id in buttons) {
+                document.getElementById(id).textContent = languages[id][index];
+            }
+            index = (index + 1) % 2;
+        }, 2000);
+    });
+
+</script>
+</html>

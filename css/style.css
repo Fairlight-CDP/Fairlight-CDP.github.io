@@ -1,0 +1,155 @@
+
+@font-face {
+    font-family: 'Backfired';
+    src: url('../fonts/Backfired.ttf');
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Backfired'; 
+    color:white;
+
+}
+
+@keyframes typingEffect {
+    0% { width: 0; }
+    50% { width: 100%; }
+    100% { width: 0; }
+}
+
+@keyframes blinkCursor {
+    from { border-right-color: transparent; }
+    to { border-right-color: black; }
+}
+
+h1 {
+    font-size: 2em;
+    padding: 10px;
+       border: 4px solid transparent;
+       animation: borderAnimation 3s ease-in-out infinite;
+    display: inline-block;
+    overflow: hidden;
+    border-right: .15em solid black; /* Curseur simulé */
+    white-space: nowrap; /* Garde le texte sur une seule ligne */
+    margin: 0 auto; /* Centrer le texte */
+    letter-spacing: .15em; /* Espacement des caractères */
+    animation:
+        typingEffect 4s steps(30, end) infinite,
+        blinkCursor .75s step-end infinite;
+}
+
+/* Animation de changement de couleur */
+h1:hover {
+    color: #3498db;
+    transition: color 0.3s;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/back.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    mix-blend-mode: overlay; /* Utilisez 'screen', 'multiply', etc., pour différents effets */
+    animation: gradientBackground 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; 
+}
+#call {
+    text-align: center; 
+}
+#bouncer {
+    animation: bounce 2s infinite;
+
+}
+.litepaper-button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #F2F2F2;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.litepaper-button:hover {
+    background-color: #1E90FF;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-top: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent;
+    }
+    25% {
+        border-top: 4px solid #3498db;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent;
+    }
+    50% {
+        border-top: 4px solid #3498db;
+        border-right: 4px solid #3498db;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent;
+    }
+    75% {
+        border-top: 4px solid #3498db;
+        border-right: 4px solid #3498db;
+        border-bottom: 4px solid #3498db;
+        border-left: 4px solid transparent;
+    }
+    100% {
+        border-top: 4px solid #3498db;
+        border-right: 4px solid #3498db;
+        border-bottom: 4px solid #3498db;
+        border-left: 4px solid #3498db;
+    }
+}
